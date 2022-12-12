@@ -10,7 +10,7 @@
 	<%--
 	request 내장 객체로 모든 HTTP 헤더 정보 값 출력하기
 	1) 모든 헤더 이름을 가져오도록 request 객체의 getHeaderNames() 메서드를 호출하고,
-		이를 모두 저장하도록 Enumeration 객체 타입의 변수 en 을 자성.
+		이를 모두 저장하도록 Enumeration 객체 타입의 변수 en 을 작성.
 	2) Enumeration 객체 타입 변수 en 의 hasMoreElements() 메서드를 통해
 		저장된 헤더 이름이 있을 때까지 반복하도록 while문 작성.
 	3) 현재 헤더 이름을 가져오도록  Enumeration 객체 타입 변수 en의 nextElement() 메서드를 작성.
