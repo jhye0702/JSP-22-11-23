@@ -22,7 +22,7 @@
     // ResultSet generatedKeys = statement.getGenerateKeys();
     // out.print (generatedKeys.getInt(1));
     /* 저장된 글의 번호를 들고옴. 삭제시 데이터의 식별을 위해서 */
-    sql = "SELECT num FROM " + tableName + "ORDER BY num DESC LIMIT 0, 1 ";
+    sql = "SELECT num FROM " + tableName + " ORDER BY num DESC LIMIT 0, 1";
     ResultSet resultSet = statement.executeQuery(sql);
     if (resultSet.next()) { 
     	num = resultSet.getInt(1);
@@ -33,5 +33,5 @@
     if (conn != null)
     	conn.close();
 	%>	
-<%--json 양식--%>
+
 { "insert" : "true", "num" : <%=num%> }
