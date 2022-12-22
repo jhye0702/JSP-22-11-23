@@ -7,6 +7,13 @@ import market.ver01.dto.Product;
 public class ProductRepository {
 	private ArrayList<Product> listOfProducts = new ArrayList<Product>();
 	
+	// 추가하는 부분
+	private static ProductRepository instance = new ProductRepository(); // 추가부분
+	// 추가하는 생성자
+	public static ProductRepository getInstance() { 
+		return instance;
+	}
+	
 	public ProductRepository () {
 		Product phone = new Product ("P1234", "iPhone 6s", 800000);
 		phone.setDescription("4.7-inch, 1334X750 Renina HD display, 8-megapixel iSight Camera");
@@ -54,5 +61,11 @@ public class ProductRepository {
 				
 		}
 		return productById;
+	}
+	
+	// 추가하는 부분 ================================ 
+	// (위에 적혀있는 상품 외에도 추가되는 것들을 리스트에 포함 시키는 것)===========
+	public void addProduct(Product product) { 
+		listOfProducts.add(product);
 	}
 }

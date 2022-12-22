@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="market.ver01.dto.Product" %>
-<jsp:useBean id="productDAO" class="market.ver01.dao.ProductRepository" scope="session" />
+<%--이거 삭제 하고! jsp:useBean id="productDAO" class="market.ver01.dao.ProductRepository" scope="session" />
+ --%>
+<%-- 이거 추가! --%>
+<%@ page import="market.ver01.dao.ProductRepository" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +21,14 @@
 	</div>
 	<%
 		String id = request.getParameter("id");
-		Product product = productDAO.getProductById(id);
+		ProductRepository dao = ProductRepository.getInstance();
+		Product product = dao.getProductById(id);
+		
 	%>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h3><%=product.getPname()%></h3>
+				<h3><%=product.getPname()%></h3>s
 				<p><%=product.getDescription()%>
 				<p><b>상품코드 : </b><span class="badge badge-danger"> <%=product.getProductId() %></span>
 				<p><b>제조사</b> : <%=product.getManufacturer() %>

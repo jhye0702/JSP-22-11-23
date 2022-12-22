@@ -2,7 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="market.ver01.dto.Product" %>
-<jsp:useBean id="productDAO" class="market.ver01.dao.ProductRepository" scope="session" />
+<%-- 이부분 삭제 ! jsp:useBean id="productDAO" class="market.ver01.dao.ProductRepository" scope="session" />
+ --%>
+<%-- 삭제한 대신 대체! --%>
+<%@ page import="market.ver01.dao.ProductRepository" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,9 +22,10 @@
 			<h1 class="display-3">상품 목록</h1>
 		</div>
 	</div>
-	
+	<%-- 추가되는 게 dao --%>
 	<%
-		ArrayList<Product> listOfProducts = productDAO.getAllProducts();
+		ProductRepository dao = ProductRepository.getInstance();
+		ArrayList<Product> listOfProducts = dao.getAllProducts();
 		%>
 	
 	<div class="container">

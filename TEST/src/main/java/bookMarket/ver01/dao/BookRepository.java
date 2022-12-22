@@ -3,9 +3,16 @@ package bookMarket.ver01.dao;
 import java.util.ArrayList;
 
 import bookMarket.ver01.dto.Book;
+import market.ver01.dao.ProductRepository;
+import market.ver01.dto.Product;
 
 public class BookRepository {
 	ArrayList<Book> listOfBooks = new ArrayList<Book>();
+	
+	private static BookRepository instance = new BookRepository();
+	public static BookRepository getInstance() { 
+		return instance;
+	}
 
 	public BookRepository() {
 		Book book1 = new Book("0101A", "책입니당", 20000);
@@ -60,6 +67,10 @@ public class BookRepository {
 			}
 		} return bookById;
 	}
-	
+	// 추가하는 부분 ================================ 
+	// (위에 적혀있는 상품 외에도 추가되는 것들을 리스트에 포함 시키는 것)===========
+	public void addBook(Book Book) { 
+		listOfBooks.add(Book);
+	}
 	
 }

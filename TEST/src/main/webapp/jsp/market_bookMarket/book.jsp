@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="bookMarket.ver01.dto.Book" %>
-<jsp:useBean id="bookDAO" class="bookMarket.ver01.dao.BookRepository" scope="session" />
+<%@ page import="bookMarket.ver01.dao.BookRepository" %>
+<%--유즈빈 없애기 ! jsp:useBean id="bookDAO" class="bookMarket.ver01.dao.BookRepository" scope="session" />
+ --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +20,8 @@
 		</div>
 		<%
 			String id = request.getParameter("id");
-			Book book = bookDAO.getBookById(id);
+			BookRepository dao = BookRepository.getInstance();
+			Book book = dao.getBookById(id);
 		%>
 		<div class="container">
 			<div class="row">
