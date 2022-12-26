@@ -24,6 +24,7 @@ public class BookRepository {
 		book1.setTotalPages(350);
 		book1.setReleaseDate("07/2019");
 		book1.setCondition("New");
+		book1.setFilename("P1111");
 		
 		Book book2 = new Book("0202B", "고로로로", 30000);
 		book2.setAuthor("고롱고롱");
@@ -34,6 +35,7 @@ public class BookRepository {
 		book2.setTotalPages(400);
 		book2.setReleaseDate("11/2021");
 		book2.setCondition("Refurbished");
+		book2.setFilename("P2222");
 		
 		Book book3 = new Book("0303C", "해리포터", 30000);		book3.setAuthor("롤링어쩌구..");
 		book3.setAuthor("조앤 롤링?");
@@ -44,6 +46,7 @@ public class BookRepository {
 		book3.setTotalPages(500);
 		book3.setReleaseDate("04/2003");
 		book3.setCondition("E-Book");
+		book3.setFilename("P3333");
 		
 		listOfBooks.add(book1);
 		listOfBooks.add(book2);

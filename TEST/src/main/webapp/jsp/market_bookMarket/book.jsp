@@ -25,7 +25,7 @@
 		%>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div cl`ass="col-md-6">
 					<h3><%=book.getName()%></h3>
 					<p><%=book.getDescription()%>
 					<p><b>도서코드 : </b>	<span class="badge badge-danger"> <%=book.getBooktId() %></span>
